@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/infractucture/datasources/pokemon.datasource.impl.dart';
-import 'package:pokemon/infractucture/repositories/pokemon.repository.impl.dart';
+import 'package:pokemon/infractucture/datasources/pokemon_datasource.dart';
+
+import 'package:pokemon/infractucture/repositories/pokemon_repository_impl.dart';
+
 import 'package:pokemon/presentation/providers/pokemon_provider.dart';
 import 'package:pokemon/presentation/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';

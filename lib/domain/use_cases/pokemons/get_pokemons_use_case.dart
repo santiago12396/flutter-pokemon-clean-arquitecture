@@ -1,8 +1,8 @@
 import 'package:pokemon/domain/entities/pokemon.dart';
-import 'package:pokemon/domain/repositories/pokemon.repository.dart';
+import 'package:pokemon/domain/repositories/pokemon_repository.dart';
 
 abstract class GetPokemonsUseCase {
-  Future<dynamic> execute();
+  Future<List<Pokemon>> execute();
 }
 
 class GetPokemons implements GetPokemonsUseCase {

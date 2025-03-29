@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon/domain/entities/pokemon.dart';
+import 'package:pokemon/presentation/screens/pokemon/pokemon_detail_screen.dart';
 
 class PokemonCard extends StatelessWidget {
   final Pokemon pokemon;
@@ -8,15 +9,26 @@ class PokemonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: EdgeInsets.all(5),
-        child: Column(
-          children: [
-            Text('${pokemon.id}'),
-            Image.network(pokemon.image, height: 350, fit: BoxFit.cover),
-            Text('${pokemon.name}'),
-          ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PokemonDetailScreen(pokemon: pokemon),
+          ),
+        );
+      },
+      child: Card(
+        color: Colors.blueAccent,
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            children: [
+              Text('${pokemon.id}'),
+              Image.network(pokemon.image, fit: BoxFit.cover),
+              Text(pokemon.name),
+            ],
+          ),
         ),
       ),
     );

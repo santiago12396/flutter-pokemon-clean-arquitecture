@@ -20,12 +20,20 @@ class _HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final pokemonProvider = context.watch<PokemonProvider>();
 
-    return ListView.builder(
-      itemCount: pokemonProvider.pokemons.length,
-      itemBuilder: (context, index) {
-        final pokemon = pokemonProvider.pokemons[index];
-        return PokemonCard(pokemon: pokemon);
-      },
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        itemCount: pokemonProvider.pokemons.length,
+        itemBuilder: (context, index) {
+          final pokemon = pokemonProvider.pokemons[index];
+          return PokemonCard(pokemon: pokemon);
+        },
+      ),
     );
   }
 }

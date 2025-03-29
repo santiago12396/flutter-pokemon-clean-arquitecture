@@ -5,7 +5,7 @@ class Pokemon {
   final int height;
   final int weight;
   final List<PokemonStat> stats;
-  final List<PokemonTypes> types;
+  final List<String> types;
 
   Pokemon({
     required this.id,
@@ -23,10 +23,4 @@ class PokemonStat {
   final int baseStat;
 
   PokemonStat({required this.name, required this.baseStat});
-}
-
-class PokemonTypes {
-  final String name;
-
-  PokemonTypes({required this.name});
 }

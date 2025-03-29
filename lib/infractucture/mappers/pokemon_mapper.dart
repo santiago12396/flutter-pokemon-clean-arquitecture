@@ -15,9 +15,6 @@ class PokemonMapper {
                   PokemonStat(name: stat.stat.name, baseStat: stat.baseStat),
             )
             .toList(),
-    types:
-        pokemonDTO.types
-            .map((type) => PokemonTypes(name: type.type.name))
-            .toList(),
+    types: pokemonDTO.types.map((type) => type.type.name).toList(),
   );
 }
